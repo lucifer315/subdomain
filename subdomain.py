@@ -15,10 +15,10 @@ html=r.text
 soup=BeautifulSoup(html, "html.parser")
 soup=soup.body.div
 soup=soup.find('div',class_='panels')
-for i in soup.find_all('p'):    #find_all()方法后不能再次用find_all()方法，请注意和find()方法的搭配前后顺序
+for i in soup.find_all('p'):    
 	name=i.find('a')
 	link=name.get_text('title')
 	print(link)
 	f=open(file_name,'a')
-	f.write(link+'\r')  #若将数据写入txt文件时使用 \n 无法换行则使用 \r\n(回车+换行)
+	f.write(link+'\r') 
 	f.close()
